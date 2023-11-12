@@ -331,10 +331,6 @@ main {
   gap: 15px;
 }
 
-.imgrounded-corners {
-  border-radius: 20px;
-}
-
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
