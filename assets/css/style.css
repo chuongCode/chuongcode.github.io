@@ -728,7 +728,7 @@ main {
   z-index: 2;
 }
 
-.project-modal-container.active .testimonials-modal {
+.project-modal-container.active .project-modal {
   transform: scale(1);
   opacity: 1;
 }
@@ -984,6 +984,10 @@ main {
 
 .project-item { display: none; }
 
+.project-item {
+  cursor: pointer;
+}
+
 .project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
@@ -1018,7 +1022,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1037,7 +1041,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-item-icon-box {
+.project-item:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
 }
@@ -1051,7 +1055,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item:hover img { transform: scale(1.1); }
 
 .project-title,
 .project-category { margin-left: 10px; }

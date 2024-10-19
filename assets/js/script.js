@@ -17,15 +17,15 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 // project variables
-const projectItem = document.querySelectorAll("[data-project-item]");
+const projectsItem = document.querySelectorAll("[data-project-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
-const modalImg = document.querySelector("[data-modal-img]");
+// const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
+// const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
 const projectModalFunc = function () {
@@ -34,14 +34,14 @@ const projectModalFunc = function () {
 }
 
 // add click event to all modal items
-for (let i = 0; i < projectItem.length; i++) {
+for (let i = 0; i < projectsItem.length; i++) {
 
-  projectItem[i].addEventListener("click", function () {
+  projectsItem[i].addEventListener("click", function () {
 
-    modalImg.src = this.querySelector("[data-project-avatar]").src;
-    modalImg.alt = this.querySelector("[data-project-avatar]").alt;
+    // modalImg.src = this.querySelector("[data-project-avatar]").src;
+    // modalImg.alt = this.querySelector("[data-project-avatar]").alt;
     modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
+    // modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
 
     projectModalFunc();
 

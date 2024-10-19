@@ -284,7 +284,7 @@
           - testimonials modal / can't remove this, breaks the website
         -->
 
-        <div class="modal-container" data-modal-container>
+        <!-- <div class="modal-container" data-modal-container>
 
           <div class="overlay" data-overlay></div>
 
@@ -318,7 +318,7 @@
 
           </section>
 
-        </div>
+        </div> -->
 
 
         
@@ -588,32 +588,33 @@
           <ul class="project-list">
 
             <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
+              <div data-project-item>
+                  <figure class="project-img">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                    <div class="project-item-icon-box" data-project-avatar>
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                  <img src="./assets/images/aurum.png" alt="Welcome to Aurum" loading="lazy">
-                </figure>
+                    <img src="./assets/images/aurum.png" alt="Welcome to Aurum" loading="lazy" data-project-avatar>
+                    
+                  </figure>
 
-                <h3 class="project-title">Aurum</h3>
+                  <h3 class="project-title" data-project-title>Aurum</h3>
 
-                <p class="project-category">Web development</p>
-
-              </a>
+                  <p class="project-category">Web development</p>
+              </div>
+                  
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-project-avatar>
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/studyspaces_thumbnail4-3.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/studyspaces_thumbnail4-3.png" alt="orizon" loading="lazy" data-project-avatar>
                 </figure>
 
                 <h3 class="project-title">Study Spaces</h3>
@@ -623,7 +624,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
+            <li class="project-item active" data-filter-item data-category="web design">
               <a href="#">
 
                 <figure class="project-img">
@@ -661,25 +662,17 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
 
-      <div class="modal-img-wrapper">
-        <figure class="modal-avatar-box">
-          <!-- image was here -->
-        </figure>
-
-        <!-- quote image was here -->
-      </div>
-
       <div class="modal-content">
 
         <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
-        <time datetime="2021-06-14">14 June, 2021</time>
+        <!-- <time datetime="2021-06-14">14 June, 2021</time> -->
 
-        <div data-modal-text>
+        <!-- <div data-modal-text>
           <p>
             Insert Client Testimonial Here
           </p>
-        </div>
+        </div> -->
 
       </div>
 
@@ -687,7 +680,7 @@
   </div>
 
   <!-- Testimonial Modal Inspiration -->
-  <div class="modal-container" data-modal-container>
+  <!-- <div class="modal-container" data-modal-container>
 
     <div class="overlay" data-overlay></div>
 
@@ -721,7 +714,7 @@
 
     </section>
 
-  </div>
+  </div> -->
   
   <!--
     - custom js link
