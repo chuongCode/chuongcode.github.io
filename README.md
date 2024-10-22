@@ -1,0 +1,1 @@
+Forked from Mohammad Sadee's vcard-personal-portfolio template. Please go check it out at https://github.com/codewithsadee/vcard-personal-portfolio.

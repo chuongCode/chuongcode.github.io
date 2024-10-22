@@ -23,9 +23,12 @@ const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
-// const modalImg = document.querySelector("[data-modal-img]");
+const modalBody = document.querySelector("[data-modal-body]");
+const modalImg = document.querySelector("[data-modal-img]");
+const projDesc = document.querySelector("[data-modal-desc]");
+
 const modalTitle = document.querySelector("[data-modal-title]");
-// const modalText = document.querySelector("[data-modal-text]");
+const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 
 // modal toggle function
 const projectModalFunc = function () {
@@ -34,20 +37,46 @@ const projectModalFunc = function () {
 }
 
 // add click event to all modal items
-for (let i = 0; i < projectsItem.length; i++) {
+projectsItem.forEach(item => {
+  item.addEventListener("click", function () {
 
-  projectsItem[i].addEventListener("click", function () {
-
-    // modalImg.src = this.querySelector("[data-project-avatar]").src;
-    // modalImg.alt = this.querySelector("[data-project-avatar]").alt;
     modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
-    // modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
+    projDesc.innerHTML = this.querySelector("[data-project-desc]").innerHTML;
+
+    // Clear existing modal body content
+    modalBody.innerHTML = '';
+
+    const projectContent = item.querySelector("[data-project-content]").children;
+    Array.from(projectContent).forEach(content => {
+      if (content.getAttribute("data-type") === "image") {
+        const imgElement = document.createElement("img");
+        imgElement.src = content.getAttribute("data-src");
+        imgElement.alt = "Project Image";
+        imgElement.style.width = "80%";
+        imgElement.style.marginTop = "10px";
+        imgElement.style.marginBottom = "10px";
+        imgElement.style.borderRadius = "10px";
+        imgElement.style.marginLeft = "auto";
+        imgElement.style.marginRight = "auto";
+        modalBody.appendChild(imgElement);
+      } else if (content.getAttribute("data-type") === "text") {
+        const textElement = document.createElement("div");
+        textElement.innerHTML = content.innerHTML;
+        textElement.style.paddingTop = "10px";
+        textElement.style.textAlign = "left";
+        textElement.style.paddingBottom = "10px";
+        modalBody.appendChild(textElement);
+      }
+    });
+
+    // modalImg.src = this.querySelector("[data-modal-img]").src;
+    // modalImg.alt = this.querySelector("[data-modal-img]").alt;
 
     projectModalFunc();
 
   });
 
-}
+});
 
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", projectModalFunc);
