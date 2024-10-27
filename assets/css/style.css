@@ -4,7 +4,7 @@
 
 
 /**
- * copyright 2022 @codewithsadee
+ * copyright 2022 @chuongCode
  */
 
 
@@ -787,6 +787,15 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.modal-content a {
+  display: inline;
+  white-space: nowrap;
+}
+
+.modal-content a:visited {
+  color: #FFDB70;
 }
 
 
@@ -1890,6 +1899,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     min-width: 75%;
     width: 75%;
     margin: 0;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
   }
 
 
