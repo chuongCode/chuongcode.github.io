@@ -4,7 +4,7 @@
 
 
 /**
- * copyright 2022 @codewithsadee
+ * copyright 2022 @chuongCode
  */
 
 
@@ -690,6 +690,65 @@ main {
   opacity: 0.7;
 }
 
+/* Project Modal styles */
+.project-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.project-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-desc-modal {
+  text-align: center;
+}
+
+.project-modal-container::-webkit-scrollbar { display: none; }
+
+.project-modal-container.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.project-modal {
+  background: var(--eerie-black-2);
+  position: relative;
+  padding: 15px;
+  margin: 15px 12px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: var(--transition-1);
+  z-index: 2;
+}
+
+.project-modal-container.active .project-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .modal-close-btn:hover,
 .modal-close-btn:focus { opacity: 1; }
 
@@ -703,9 +762,18 @@ main {
   box-shadow: var(--shadow-2);
 }
 
+.modal-content {
+  max-height: 80vh; /* Set the maximum height for the modal content */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px; /* Add padding for better readability */
+}
+
 .modal-img-wrapper > img { display: none; }
 
-.modal-title { margin-bottom: 4px; }
+.modal-title {
+  margin-bottom: 4px;
+  text-align: center; 
+}
 
 .modal-content time {
   font-size: var(--fs-6);
@@ -719,6 +787,15 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.modal-content a {
+  display: inline;
+  white-space: nowrap;
+}
+
+.modal-content a:visited {
+  color: #FFDB70;
 }
 
 
@@ -941,6 +1018,10 @@ main {
 
 .project-item { display: none; }
 
+.project-item {
+  cursor: pointer;
+}
+
 .project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
@@ -953,10 +1034,11 @@ main {
 
 .project-item > a { width: 100%; }
 
+/* All images inserted must have >150 height when scaled down to 259.467 width */
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px;
+  max-height: 150px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
@@ -974,7 +1056,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -993,7 +1075,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-item-icon-box {
+.project-item:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
 }
@@ -1007,7 +1089,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item:hover img { transform: scale(1.1); }
 
 .project-title,
 .project-category { margin-left: 10px; }
@@ -1470,7 +1552,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .modal-img-wrapper > img {
     display: block;
     flex-grow: 1;
-    width: 35px;
+    width: 100%;
   }
 
   /* clients */
@@ -1588,9 +1670,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* testimonials modal */
 
-  .testimonials-modal {
+  .project-modal {
     gap: 35px;
-    max-width: 680px;
+    max-width: 1050px;
   }
 
   .modal-avatar-box img { width: 80px; }
@@ -1817,6 +1899,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     min-width: 75%;
     width: 75%;
     margin: 0;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
   }
 
 

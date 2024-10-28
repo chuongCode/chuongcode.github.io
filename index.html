@@ -82,20 +82,6 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+14054145122" class="contact-link">+1 (405) 414-5122</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
 
@@ -164,9 +150,9 @@
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
-          <!-- <li class="navbar-item">
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li> -->
+          </li>
 
         </ul>
 
@@ -275,53 +261,6 @@
           </ul>
 
         </section>
-
-
-
-
-
-        <!--
-          - testimonials modal / can't remove this, breaks the website
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Fiona Au</h4>
-
-              <time datetime="2021-06-14">October, 2022</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard picked up slack even when he was not given the opportunity to do so.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        
 
       </article>
 
@@ -531,7 +470,7 @@
 
         <section class="projects">
 
-          <ul class="filter-list">
+          <!-- <ul class="filter-list">
 
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
@@ -549,9 +488,9 @@
               <button data-filter-btn>Web development</button>
             </li>
 
-          </ul>
+          </ul> -->
 
-          <div class="filter-select-box">
+          <!-- <div class="filter-select-box">
 
             <button class="filter-select" data-select>
 
@@ -583,170 +522,273 @@
 
             </ul>
 
-          </div>
+          </div> -->
 
           <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item active">
+              <div data-project-item>
+                  <figure class="project-img">
+                    <div class="project-item-icon-box" data-project-avatar>
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="./assets/images/aurum.png" alt="Welcome to Aurum" loading="lazy" data-project-avatar>  
+                  </figure>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <h3 class="project-title" data-project-title>Aurum</h3>
+
+                  <div class="project-desc" data-project-desc style="display: none;">
+                    <p>
+                      A VR game based on authentic 17th-century alchemical manuscripts from the Robbins Library.
+                      Step into the role of a novice alchemist —
+                      exploring the laboratory, mastering the mystical arts, and
+                      uncovering the clues to the Philosopher's Stone.
+                    </p>
                   </div>
 
-                  <img src="./assets/images/aurum.png" alt="Welcome to Aurum" loading="lazy">
-                </figure>
+                  <div class="project-content" data-project-content style="display: none;">
+                    <div data-type="image" data-src="./assets/images/aurum1.png"></div>
+                    <div data-type="text">
+                      <p>
+                        Immersive technologies hold the key to transforming how we interact with the
+                        digital world by creating more engaging, realistic, and interactive experiences.
+                        Reimagining Rochester’s library collections, these technologies offer an opportunity
+                        to transform teaching and learning. By integrating VR (virtual reality) into library
+                        resources, we can invite users to not just passively consume information, but to
+                        actively engage with it.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        The vision at Studio X was a clear focus on presenting and celebrating the diverse and
+                        global history of alchemical practices. From the outset, the team was committed to promoting a
+                        more inclusive and expansive view of history, challenging the traditional Eurocentric narratives of
+                        alchemy and highlighting its rich traditions across various cultures.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        Our design process was rooted in the idea of creating an experience that anyone could enjoy, regardless of
+                        background or ability. Accessibility was key, and we focused on making the virtual environment intuitive,
+                        comfortable, and enriching for all participants. Features like force grab and teleportation movement were
+                        employed to reduce motion sickness and conflicting sensory exposure.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/aurum-forcegrab.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        In collaboration with a dedicated UI/UX team, development focused on creating an intuitive interface that
+                        enables users to interact seamlessly with the virtual environment. Numerous iterations were run through to
+                        ensure a system where players could pick up tools, mix ingredients, and observe the transformation of
+                        materials—all while maintaining the sense of immersion crucial to the experience.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        The coding team worked extensively with Unity’s <b>C# .NET framework</b> to develop smooth and responsive interactions,
+                        ensuring that the physics, animations, and user inputs felt intuitive and realistic,
+                        in addition to maintaining consistent source control through Unity's integrated
+                        Version Control System over the course of two years.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/aurum-development.png"></div>
+                    <div data-type="text">
+                      <p>
+                        Aurum has evolved through multiple generations of talented students and leaders,
+                        each contributing unique perspectives from their diverse backgrounds to advance the
+                        project's mission of expanding digital literacy. There are many to mention,
+                        but among those I want to highlight are my project manager, Mila Paymukhina, now at Netflix;
+                        the resident XR developer, Liam O'Leary; and project mentor, Meaghan Moody, Assistant Director of Studio X,
+                        as well as in addition to all of the omega talented undergrad peers I was fortunate enough to work alongside.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        Aurum has been featured at multiple symposiums and research expos, and it's been an honor to
+                        showcase its impact in the field of immersive technology. Among the key events where Aurum was
+                        presented are the RIT Frameless Symposium and the Studio X Annual XR Research Showcase,
+                        collectively attracting over 500 attendees. In addition to its role as a research project,
+                        Aurum also serves as an educational model, highlighting the potential of VR in enhancing teaching and learning experiences.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/aurum-presentation.png"></div>
+                    <div data-type="text">
+                      <p class="no-wrap" style="text-align: center;">
+                        Find more information about Aurum on the <a href="https://www.library.rochester.edu/projects/aurum-vr-alchemical-laboratory"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Studio X website</a>
+                      </p>
+                    </div>
+                  </div>
 
-                <h3 class="project-title">Aurum</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+              </div>
+                  
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item active">
+              <div data-project-item>
+                  <figure class="project-img">
+                    <div class="project-item-icon-box" data-project-avatar>
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="./assets/images/studyspaces_thumbnail4-3.png" alt="Study Spaces Thumbnail" loading="lazy" data-project-avatar>
+                  </figure>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <h3 class="project-title" data-project-title>Study Spaces</h3>
+
+                  <div class="project-desc" data-project-desc style="display: none;">
+                    <p>
+                      A seamless way to transform your class notes into dynamic multiplayer quizzes using AI.
+                      Turn studying PDF lecture materials from boring grind sessions to fun, interactive learning
+                      experiences!
+                    </p>
                   </div>
 
-                  <img src="./assets/images/studyspaces_thumbnail5.JPG  " alt="orizon" loading="lazy">
-                </figure>
+                  <div class="project-content" data-project-content style="display: none;">
+                    <div data-type="image" data-src="./assets/images/studyspaces-lobby.png"></div>
+                    <div data-type="text">
+                      <p>
+                        The concept of Study Spaces was born during the 10th anniversary of RIT’s premier hackathon,
+                        BrickHack X, and was developed alongside an incredibly talented team, including Kayla Lin
+                        (now of Ramp), Bon Anh Nguyen, and Jassem Toumi. We all shared a passion for using software to
+                        empower users, driven by a common goal to create meaningful, impactful solutions that
+                        address real-world challenges.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/final-studyspaces.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        Our inspiration stemmed from popular educational platforms of our childhood,
+                        like Kahoot and Quizizz, which brought a sense of fun and competition to learning.
+                        And recognizing the huge wave of trendy products powered by AI, we collaborated to
+                        build on that foundation by designing a platform to optimize the study environment for
+                        students by streamlining that gamified experience that allows them to practice learning
+                        materials and test their knowledge against peers in a friendly competitive setting using AI
+                        to dynamically tailor quiz content to the user’s study materials.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/platform-inspirations.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        After solidifying our concept, we turned our focus to selecting the right tech stack
+                        for the project. Driven by a desire to push boundaries and explore new technologies,
+                        we saw Cloudflare's challenge to leverage their new tool, Workers AI,
+                        as an exciting opportunity to implement machine learning models on a global,
+                        serverless GPU network, bringing our idea to life. Kayla, being our senior and
+                        an absolute front-end wizard guru, brought extensive experience with building out
+                        Express.js and Next.js apps, guiding us forward with her expertise. We moved to the next
+                        steps of setting up the core infrastructure for multiplayer sessions, which involves
+                        supporting real-time interaction to allow multiple users joining quizzes simultaneously.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        To enable this seamless experience where players could easily join and leave game rooms,
+                        we chose Socket.IO for its reliable, real-time, two-way communication capabilities.
+                        Its robust support for event-driven communication made it ideal for managing the dynamic
+                        interactions essential to our multiplayer quiz environment. We were then able to maintain
+                        persistent connections between the server and clients, ensuring that updates—such as new
+                        questions, player responses, and scores—were instantly synchronized across all users in asession.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/logingif3.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        With our connection in place, we turned to building out the backend to manage the core functionalities
+                        and data flow of Study Spaces. Using Express.js as our basis, we set up routes for session management
+                        and data handling, integrating MySQL as our database to store essential data—such as user profiles,
+                        study materials, and session history—ensuring scalability as the platform grows. And with Workers AI
+                        hooked up to process content and generate questions in real time, we could relay our dynamic quizzes to the
+                        frontend through Socket.IO to display the game to the users synchronously. Additionally, we implemented game
+                        logic to handle room creation, score updates, and player actions, enabling smooth, interactive sessions for all
+                        participants.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/joinlobbygif.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        Now all of this intricate backend would be for naught without a frontend capable of delivering an
+                        intuitive and engaging experience for its users. Crafting the components for quiz interactions,
+                        score displays, and score displays came easy with Kayla at the helm, and facilitating the gamified,
+                        collaborative experience we envisioned for Study Spaces really came to life once we bridged our user
+                        interface with processes behind the scene.
+                      </p>
+                    </div>
+                    <div data-type="text">
+                      <p>
+                        Through our combined efforts, Study Spaces grew from a simple concept to a fully fledged, AI-driven
+                        study tool committed to transforming how users view engaging with learning materials.
+                        By focusing on how we can make learning platforms more interactive and accessible and blending them
+                        with our current day cutting-edge technology, we reinforced our commitment to developing tools that use
+                        technology to enhance educational experiences and build communities.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/victorygif.gif"></div>
+                    <div data-type="text">
+                      <p>
+                        Our project’s impact was recognized at BrickHack X, where we were honored with the 'Best AI Hack' award
+                        presented by Cloudflare. As judges, fellow hackers, and other users viewed and tested our product,
+                        we received a wealth of new ideas and valuable perspectives. For instance, a professor suggested that
+                        the platform could be especially beneficial for creating tests tailored to student learning needs.
+                        This experience affirmed our excitement for how tech products can meet the diverse needs of different
+                        clients, users, and communities, and we’re all eager to pursue the next horizon of learning and innovation.
+                      </p>
+                    </div>
+                    <div data-type="image" data-src="./assets/images/brickhack2024.jpeg"></div>
+                    <div data-type="text">
+                      <p class="no-wrap" style="text-align: center;">
+                        Find more information about Study Spaces on our <a href="https://devpost.com/software/study-spaces-gj7t3k"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Devpost</a>
+                      </p>
+                    </div>
+                  </div>
 
-                <h3 class="project-title">Study Spaces</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+              </div>
+                  
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
+            <li class="project-item active">
+              <div data-project-item>
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
+                  <div class="project-item-icon-box" data-project-avatar>
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/beacon.png" alt="Email Beacon Searching" loading="lazy" data-project-avatar>  
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title" data-project-title>Simple Email Beacon</h3>
 
-                <p class="project-category">Web design</p>
+                <div class="project-desc" data-project-desc style="display: none;">
+                  <p>
+                    A tool that discreetly monitors when, where, and how often an email's content has been accessed.
+                  </p>
+                </div>
 
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                <div class="project-content" data-project-content style="display: none;">
+                  <div data-type="image" data-src="./assets/images/email-inspect.png"></div>
+                  <div data-type="text">
+                    <p>
+                      Simple Email Beacon traces its origins from a summer brainstorming session with a friend,
+                      where we saw an opportunity to develop a tracking tool that could capture key data points
+                      (e.g., IP address, server location, time) and empower users to monitor access to data-sensitive
+                      content. Recognizing that over 90% of cybercrimes are initiated through email, we saw the chance
+                      to make a project that could serve as a public good that anyone could intuitively use and benefit from.
+                    </p>
                   </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <div data-type="text">
+                    <p class="no-wrap" style="text-align: center;">
+                      Find more information about Simple Email Beacon on our
+                      <a href="https://github.com/chuongCode/Simple-Email-Beacon"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Repo</a>
+                    </p>
                   </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+                </div>
+              </div>
             </li>
 
           </ul>
@@ -758,6 +800,43 @@
     </div>
 
   </main>
+  
+  <!-- Modal Structure -->
+  <div class="project-modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+
+    <section class="project-modal">
+
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-content">
+
+        <h4 class="h3 modal-title" data-modal-title>Project Title</h4>
+
+        <div class="project-desc-modal" data-modal-desc>
+          <p>
+            Insert Project Description Here.
+          </p>
+        </div>
+
+        <!-- <time datetime="2021-06-14">14 June, 2021</time> -->
+
+        <!-- <div data-project-text>
+          <p>
+            Insert Project Narrative Text Here.
+          </p>
+        </div> -->
+
+        <div data-modal-body>
+          <!-- Dyanmic body content-->
+        </div>
+
+      </div>
+
+    </section>
+  </div>
   
   <!--
     - custom js link
