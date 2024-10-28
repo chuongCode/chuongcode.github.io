@@ -71,9 +71,6 @@ projectsItem.forEach(item => {
       }
     });
 
-    // modalImg.src = this.querySelector("[data-modal-img]").src;
-    // modalImg.alt = this.querySelector("[data-modal-img]").alt;
-
     projectModalFunc();
 
   });
