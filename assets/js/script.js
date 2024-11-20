@@ -24,6 +24,7 @@ const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
 const modalBody = document.querySelector("[data-modal-body]");
+const modalContent = document.querySelector("[data-modal-content]");
 const modalImg = document.querySelector("[data-modal-img]");
 const projDesc = document.querySelector("[data-modal-desc]");
 
@@ -34,7 +35,7 @@ const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 const projectModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
-  modalBody.scrollTop = 0; // Scroll the modal content to the top
+  modalContent.scrollTop = 0; // Scroll the modal content to the top
 }
 
 // add click event to all modal items
