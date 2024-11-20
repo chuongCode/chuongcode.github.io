@@ -34,6 +34,7 @@ const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 const projectModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
+  modalBody.scrollTop = 0; // Scroll the modal content to the top
 }
 
 // add click event to all modal items
@@ -53,14 +54,31 @@ projectsItem.forEach(item => {
         imgElement.src = content.getAttribute("data-src");
         imgElement.alt = "Project Image";
         imgElement.style.width = "80%";
-        imgElement.style.maxHeight = "455px";
-        imgElement.style.objectFit = "cover";
+        imgElement.style.maxHeight = "455px"; // Restrict the maximum height
+        imgElement.style.objectFit = "cover"; // Crop the image to fit the specified area
         imgElement.style.marginTop = "10px";
         imgElement.style.marginBottom = "10px";
         imgElement.style.borderRadius = "10px";
         imgElement.style.marginLeft = "auto";
         imgElement.style.marginRight = "auto";
         modalBody.appendChild(imgElement);
+      } else if (content.getAttribute("data-type") === "video") {
+        const videoElement = document.createElement("video");
+        videoElement.src = content.getAttribute("data-src");
+        videoElement.autoplay = true;
+        videoElement.loop = true;
+        videoElement.muted = true;
+        videoElement.playsInline = true;
+        videoElement.style.width = "80%";
+        videoElement.style.maxHeight = "455px"; // Restrict the maximum height
+        videoElement.style.objectFit = "cover"; // Crop the video to fit the specified area
+        videoElement.style.marginTop = "10px";
+        videoElement.style.marginBottom = "10px";
+        videoElement.style.borderRadius = "10px";
+        videoElement.style.display = "block";
+        videoElement.style.marginLeft = "auto";
+        videoElement.style.marginRight = "auto";
+        modalBody.appendChild(videoElement);
       } else if (content.getAttribute("data-type") === "text") {
         const textElement = document.createElement("div");
         textElement.innerHTML = content.innerHTML;
