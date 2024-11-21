@@ -29,7 +29,6 @@ const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 const projectModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
-  modalContent.scrollTop = 0; // Scroll the modal content to the top
 }
 
 // add click event to all modal items
@@ -83,6 +82,7 @@ projectsItem.forEach(item => {
         modalBody.appendChild(textElement);
       }
     });
+    modalContent.scrollTop = 0; // Scroll the modal content to the top
 
     projectModalFunc();
 
