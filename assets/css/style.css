@@ -612,28 +612,6 @@ main {
  * #testimonials-modal
  */
 
-.modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overscroll-behavior: contain;
-  z-index: 20;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.modal-container::-webkit-scrollbar { display: none; }
-
-.modal-container.active {
-  pointer-events: all;
-  visibility: visible;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -652,25 +630,6 @@ main {
   opacity: 0.8;
   visibility: visible;
   pointer-events: all;
-}
-
-.testimonials-modal {
-  background: var(--eerie-black-2);
-  position: relative;
-  padding: 15px;
-  margin: 15px 12px;
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  box-shadow: var(--shadow-5);
-  transform: scale(1.2);
-  opacity: 0;
-  transition: var(--transition-1);
-  z-index: 2;
-}
-
-.modal-container.active .testimonials-modal {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .modal-close-btn {
@@ -761,9 +720,9 @@ main {
 }
 
 .modal-content {
-  max-height: 80vh; /* Set the maximum height for the modal content */
+  max-height: 80vh;
   overflow-y: auto; /* Enable vertical scrolling */
-  padding: 20px; /* Add padding for better readability */
+  padding: 20px;
 }
 
 .modal-img-wrapper > img { display: none; }
@@ -798,7 +757,7 @@ main {
 
 
 /**
- * #clients 
+ * #clients, deprecated (i have no clients)
  */
 
 .clients { margin-bottom: 15px; }
@@ -1111,7 +1070,7 @@ main {
 
 
 /*-----------------------------------*\
-  #BLOG
+  #BLOG, deprecated (i have no blog)
 \*-----------------------------------*/
 
 .blog-posts { margin-bottom: 10px; }
