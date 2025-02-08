@@ -29,6 +29,7 @@ const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 const projectModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
+  modalBody.scrollTop = 0; // Scroll the modal content to the top
 }
 
 // add click event to all modal items
@@ -48,8 +49,8 @@ projectsItem.forEach(item => {
         imgElement.src = content.getAttribute("data-src");
         imgElement.alt = "Project Image";
         imgElement.style.width = "80%";
-        imgElement.style.maxHeight = "455px";
-        imgElement.style.objectFit = "cover";
+        imgElement.style.maxHeight = "300px"; // Restrict the maximum height
+        imgElement.style.objectFit = "cover"; // Crop the image to fit the specified area
         imgElement.style.marginTop = "10px";
         imgElement.style.marginBottom = "10px";
         imgElement.style.borderRadius = "10px";
@@ -64,25 +65,39 @@ projectsItem.forEach(item => {
         videoElement.muted = true;
         videoElement.playsInline = true;
         videoElement.style.width = "80%";
-        videoElement.style.maxHeight = "455px";
-        videoElement.style.objectFit = "cover";
+        videoElement.style.maxHeight = "455px"; // Restrict the maximum height
+        videoElement.style.objectFit = "cover"; // Crop the video to fit the specified area
         videoElement.style.marginTop = "10px";
         videoElement.style.marginBottom = "10px";
         videoElement.style.borderRadius = "10px";
-        videoElement.style.display = "block";
-        videoElement.style.marginLeft = "auto";
-        videoElement.style.marginRight = "auto";
+        videoElement.style.display = "block"; // Center the video
+        videoElement.style.marginLeft = "auto"; // Center the video
+        videoElement.style.marginRight = "auto"; // Center the video
         modalBody.appendChild(videoElement);
+      } else if (content.getAttribute("data-type") === "iframe") {
+        const iframeElement = document.createElement("iframe");
+        iframeElement.src = content.getAttribute("data-src");
+        iframeElement.width = "90%";
+        iframeElement.height = "500px";
+        iframeElement.allowFullscreen = true;
+        iframeElement.allow = "accelerometer; magnetometer; gyroscope";
+        iframeElement.style.display = "block";
+        iframeElement.style.margin = "20px auto";
+        iframeElement.style.border = "0 none";
+        iframeElement.style.maxWidth = "880px";
+        iframeElement.style.borderRadius = "8px";
+        iframeElement.style.boxShadow = "0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11)";
+        modalBody.appendChild(iframeElement);
       } else if (content.getAttribute("data-type") === "text") {
         const textElement = document.createElement("div");
         textElement.innerHTML = content.innerHTML;
         textElement.style.paddingTop = "10px";
-        textElement.style.textAlign = "left";
         textElement.style.paddingBottom = "10px";
+        textElement.style.textAlign = "left"; // Align text to the left
+        textElement.style.color = "#EAEAEA"; // Change text color to #EAEAEA
         modalBody.appendChild(textElement);
       }
     });
-    modalContent.scrollTop = 0; // Scroll the modal content to the top
 
     projectModalFunc();
 
