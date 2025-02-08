@@ -23,6 +23,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Photo-Sphere-Viewer CSS (ES Module version) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+
+  <!-- Import Map: Tells the browser where to load our ES modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+        "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -515,7 +528,7 @@
                       </p>
                     </div>
                     <!-- insert the 360 image here -->
-                    <div data-type="iframe" data-src="https://panoraven.com/fr/embed/0gojLuqM4A"></div>
+                    <div data-type="panorama" data-src="./assets/images/Panorama.png"></div>
                     <div data-type="text">
                       <p>
                         Our design process was rooted in the idea of creating an experience that anyone could enjoy, regardless of
@@ -863,7 +876,7 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script type="module" src="./assets/js/script.js"></script>
 
   <!--
     - ionicon link

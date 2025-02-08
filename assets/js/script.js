@@ -1,7 +1,11 @@
+import { Viewer } from '@photo-sphere-viewer/core';
+
 'use strict';
 
 // element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const elementToggleFunc = function (elem) {
+  elem.classList.toggle("active");
+};
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -44,20 +48,22 @@ projectsItem.forEach(item => {
 
     const projectContent = item.querySelector("[data-project-content]").children;
     Array.from(projectContent).forEach(content => {
-      if (content.getAttribute("data-type") === "image") {
+      const contentType = content.getAttribute("data-type");
+
+      if (contentType === "image") {
         const imgElement = document.createElement("img");
         imgElement.src = content.getAttribute("data-src");
         imgElement.alt = "Project Image";
         imgElement.style.width = "80%";
-        imgElement.style.maxHeight = "300px"; // Restrict the maximum height
-        imgElement.style.objectFit = "cover"; // Crop the image to fit the specified area
+        imgElement.style.maxHeight = "455px";
+        imgElement.style.objectFit = "cover";
         imgElement.style.marginTop = "10px";
         imgElement.style.marginBottom = "10px";
         imgElement.style.borderRadius = "10px";
         imgElement.style.marginLeft = "auto";
         imgElement.style.marginRight = "auto";
         modalBody.appendChild(imgElement);
-      } else if (content.getAttribute("data-type") === "video") {
+      } else if (contentType === "video") {
         const videoElement = document.createElement("video");
         videoElement.src = content.getAttribute("data-src");
         videoElement.autoplay = true;
@@ -65,44 +71,48 @@ projectsItem.forEach(item => {
         videoElement.muted = true;
         videoElement.playsInline = true;
         videoElement.style.width = "80%";
-        videoElement.style.maxHeight = "455px"; // Restrict the maximum height
-        videoElement.style.objectFit = "cover"; // Crop the video to fit the specified area
+        videoElement.style.maxHeight = "455px";
+        videoElement.style.objectFit = "cover";
         videoElement.style.marginTop = "10px";
         videoElement.style.marginBottom = "10px";
         videoElement.style.borderRadius = "10px";
-        videoElement.style.display = "block"; // Center the video
-        videoElement.style.marginLeft = "auto"; // Center the video
-        videoElement.style.marginRight = "auto"; // Center the video
+        videoElement.style.display = "block";
+        videoElement.style.marginLeft = "auto";
+        videoElement.style.marginRight = "auto";
         modalBody.appendChild(videoElement);
-      } else if (content.getAttribute("data-type") === "iframe") {
-        const iframeElement = document.createElement("iframe");
-        iframeElement.src = content.getAttribute("data-src");
-        iframeElement.width = "90%";
-        iframeElement.height = "500px";
-        iframeElement.allowFullscreen = true;
-        iframeElement.allow = "accelerometer; magnetometer; gyroscope";
-        iframeElement.style.display = "block";
-        iframeElement.style.margin = "20px auto";
-        iframeElement.style.border = "0 none";
-        iframeElement.style.maxWidth = "880px";
-        iframeElement.style.borderRadius = "8px";
-        iframeElement.style.boxShadow = "0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11)";
-        modalBody.appendChild(iframeElement);
-      } else if (content.getAttribute("data-type") === "text") {
+      } else if (contentType === "panorama") {
+        // Create a container div for the 360 viewer
+        const panoramaContainer = document.createElement("div");
+        panoramaContainer.style.width = "80%";
+        panoramaContainer.style.height = "500px";
+        panoramaContainer.style.margin = "10px auto";
+        panoramaContainer.style.borderRadius = "10px";
+        modalBody.appendChild(panoramaContainer);
+
+        // Retrieve the panorama source URL from the element
+        const panoramaSrc = content.getAttribute("data-src");
+        console.log("Panorama URL:", panoramaSrc);
+
+        // Initialize the Viewer using the imported Viewer from @photo-sphere-viewer/core
+        const viewer = new Viewer({
+          container: panoramaContainer,
+          panorama: panoramaSrc,
+          defaultYaw: 0,
+          navbar: true,
+        });
+      } else if (contentType === "text") {
         const textElement = document.createElement("div");
         textElement.innerHTML = content.innerHTML;
         textElement.style.paddingTop = "10px";
+        textElement.style.textAlign = "left";
         textElement.style.paddingBottom = "10px";
-        textElement.style.textAlign = "left"; // Align text to the left
-        textElement.style.color = "#EAEAEA"; // Change text color to #EAEAEA
         modalBody.appendChild(textElement);
       }
     });
+    modalContent.scrollTop = 0; // Scroll the modal content to the top
 
     projectModalFunc();
-
   });
-
 });
 
 // add click event to modal close button
@@ -118,10 +128,9 @@ const formBtn = document.querySelector("[data-form-btn]");
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
+// add event to all nav links
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
@@ -132,6 +141,5 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
-
   });
 }
