@@ -2,6 +2,9 @@ import { Viewer } from '@photo-sphere-viewer/core';
 
 'use strict';
 
+// Global variable to store the current panorama viewer instance (if any)
+let currentViewer = null;
+
 // element toggle function
 const elementToggleFunc = function (elem) {
   elem.classList.toggle("active");
@@ -12,7 +15,9 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+sidebarBtn.addEventListener("click", function () {
+  elementToggleFunc(sidebar);
+});
 
 // project variables
 const projectsItem = document.querySelectorAll("[data-project-item]");
@@ -20,12 +25,11 @@ const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
-// modal variable
+// modal variables
 const modalBody = document.querySelector("[data-modal-body]");
 const modalContent = document.querySelector("[data-modal-content]");
 const modalImg = document.querySelector("[data-modal-img]");
 const projDesc = document.querySelector("[data-modal-desc]");
-
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 
@@ -33,12 +37,21 @@ const modalThumbnail = document.querySelector("[data-project-thumbnail]");
 const projectModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
-  modalBody.scrollTop = 0; // Scroll the modal content to the top
-}
+};
+
+// Utility function to destroy the current viewer (if it exists)
+const destroyCurrentViewer = function () {
+  if (currentViewer) {
+    currentViewer.destroy();
+    currentViewer = null;
+  }
+};
 
 // add click event to all modal items
 projectsItem.forEach(item => {
   item.addEventListener("click", function () {
+    // In case a previous viewer exists, destroy it before initializing a new one
+    destroyCurrentViewer();
 
     modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
     projDesc.innerHTML = this.querySelector("[data-project-desc]").innerHTML;
@@ -94,7 +107,7 @@ projectsItem.forEach(item => {
         console.log("Panorama URL:", panoramaSrc);
 
         // Initialize the Viewer using the imported Viewer from @photo-sphere-viewer/core
-        const viewer = new Viewer({
+        currentViewer = new Viewer({
           container: panoramaContainer,
           panorama: panoramaSrc,
           defaultYaw: 0,
@@ -115,9 +128,15 @@ projectsItem.forEach(item => {
   });
 });
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", projectModalFunc);
-overlay.addEventListener("click", projectModalFunc);
+// When closing the modal, destroy the panorama viewer if it exists
+modalCloseBtn.addEventListener("click", () => {
+  destroyCurrentViewer();
+  projectModalFunc();
+});
+overlay.addEventListener("click", () => {
+  destroyCurrentViewer();
+  projectModalFunc();
+});
 
 // contact form variables
 const form = document.querySelector("[data-form]");
