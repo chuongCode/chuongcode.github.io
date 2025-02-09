@@ -102,14 +102,14 @@ projectsItem.forEach(item => {
         panoramaContainer.style.borderRadius = "10px";
         modalBody.appendChild(panoramaContainer);
 
-        // Retrieve the panorama source URL from the element
         const panoramaSrc = content.getAttribute("data-src");
         console.log("Panorama URL:", panoramaSrc);
 
-        // Initialize the Viewer using the imported Viewer from @photo-sphere-viewer/core
+        // Init Viewer from @photo-sphere-viewer/core
         currentViewer = new Viewer({
           container: panoramaContainer,
           panorama: panoramaSrc,
+          caption: 'Aurum Main Laboratory <b>&copy; Studio X 2025</b>',
           defaultYaw: 0,
           navbar: true,
         });
