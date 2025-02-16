@@ -863,6 +863,10 @@ main {
   line-height: 1.6;
 }
 
+.resume-desc-padding {
+  padding-top: 10px;
+}
+
 
 /**
  * skills 
