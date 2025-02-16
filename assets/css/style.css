@@ -1069,9 +1069,9 @@ main {
   font-weight: var(--fw-300);
 }
 
-
-
-
+.no-display {
+  display: none;
+}
 
 /*-----------------------------------*\
   #BLOG, deprecated (i have no blog)
