@@ -799,6 +799,7 @@ main {
 .modal-content a {
   display: inline;
   white-space: nowrap;
+  color: var(--vegas-gold);
 }
 
 .modal-content a:visited {
