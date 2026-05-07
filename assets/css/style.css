@@ -1198,6 +1198,32 @@ main {
   transition: var(--transition-1);
 }
 
+/* Mobile: center project descriptions and footer text */
+@media (max-width: 768px) {
+  /* Project modal / descriptions */
+  .project-text,
+  .project-desc-modal,
+  .project-modal .modal-content,
+  .project-modal .modal-content p,
+  .project-modal .modal-content a,
+  [data-project-desc] p,
+  [data-project-content] p,
+  .project-item .project-title {
+    text-align: center;
+  }
+
+  /* Center any explicit utility text used in project content */
+  .text-centered,
+  .no-wrap.text-centered {
+    text-align: center;
+  }
+
+  /* Ensure bottom navbar items remain centered */
+  .navbar-list {
+    justify-content: center;
+  }
+}
+
 .blog-post-item > a:hover .blog-banner-box img {
   transform: scale(1.1);
 }
