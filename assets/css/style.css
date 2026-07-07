@@ -175,7 +175,7 @@ body {
 \*-----------------------------------*/
 
 .sidebar,
-article {
+.main-content {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   border-radius: 20px;
@@ -1452,7 +1452,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
-  article {
+  .main-content {
     width: 520px;
     margin-inline: auto;
     padding: 30px;
@@ -1759,7 +1759,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
-  article {
+  .main-content {
     width: 700px;
   }
 
@@ -1879,7 +1879,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
-  article {
+  .main-content {
     width: 950px;
     box-shadow: var(--shadow-5);
   }
@@ -1894,7 +1894,6 @@ textarea.form-input::-webkit-resizer {
 
   .main-content {
     position: relative;
-    width: max-content;
     margin: auto;
   }
 
@@ -2002,11 +2001,11 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar,
-  article {
+  .main-content {
     width: auto;
   }
 
-  article {
+  .main-content {
     min-height: 100%;
   }
 
