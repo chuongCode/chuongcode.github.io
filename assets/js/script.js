@@ -1,9 +1,11 @@
 import { Viewer } from '@photo-sphere-viewer/core';
+import { play } from './vendor/cuelume/index.js';
 
 ('use strict');
 
 // Global variable to store the current panorama viewer instance (if any)
 let currentViewer = null;
+let modalRenderId = 0;
 
 // element toggle function
 const elementToggleFunc = function (elem) {
@@ -50,6 +52,10 @@ const destroyCurrentViewer = function () {
 // add click event to all modal items
 projectsItem.forEach((item) => {
   item.addEventListener('click', function () {
+    const renderId = ++modalRenderId;
+
+    play('toggle');
+
     // In case a previous viewer exists, destroy it before initializing a new one
     destroyCurrentViewer();
 
@@ -62,6 +68,8 @@ projectsItem.forEach((item) => {
     const projectContent = item.querySelector(
       '[data-project-content]'
     ).children;
+    const viewerInitializers = [];
+
     Array.from(projectContent).forEach((content) => {
       const contentType = content.getAttribute('data-type');
 
@@ -107,13 +115,14 @@ projectsItem.forEach((item) => {
         const panoramaSrc = content.getAttribute('data-src');
         console.log('Panorama URL:', panoramaSrc);
 
-        // Init Viewer from @photo-sphere-viewer/core
-        currentViewer = new Viewer({
-          container: panoramaContainer,
-          panorama: panoramaSrc,
-          caption: 'Aurum Main Laboratory <b>&copy; Studio X 2025</b>',
-          defaultYaw: 0,
-          navbar: true,
+        viewerInitializers.push(() => {
+          currentViewer = new Viewer({
+            container: panoramaContainer,
+            panorama: panoramaSrc,
+            caption: 'Aurum Main Laboratory <b>&copy; Studio X 2025</b>',
+            defaultYaw: 0,
+            navbar: true,
+          });
         });
       } else if (contentType === 'text') {
         const textElement = document.createElement('div');
@@ -127,16 +136,31 @@ projectsItem.forEach((item) => {
     modalContent.scrollTop = 0; // Scroll the modal content to the top
 
     projectModalFunc();
+
+    viewerInitializers.forEach((initializeViewer) => {
+      setTimeout(() => {
+        if (
+          renderId === modalRenderId &&
+          modalContainer.classList.contains('active')
+        ) {
+          initializeViewer();
+        }
+      }, 100);
+    });
   });
 });
 
 // When closing the modal, destroy the panorama viewer if it exists
 modalCloseBtn.addEventListener('click', () => {
+  modalRenderId++;
   destroyCurrentViewer();
+  play('toggle');
   projectModalFunc();
 });
 overlay.addEventListener('click', () => {
+  modalRenderId++;
   destroyCurrentViewer();
+  play('toggle');
   projectModalFunc();
 });
 
@@ -152,6 +176,8 @@ const pages = document.querySelectorAll('[data-page]');
 // add event to all nav links
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener('click', function () {
+    play('bloom');
+
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add('active');
