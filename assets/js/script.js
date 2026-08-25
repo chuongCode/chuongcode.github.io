@@ -79,7 +79,8 @@ projectsItem.forEach((item) => {
         imgElement.alt = 'Project Image';
         imgElement.style.width = '80%';
         imgElement.style.maxHeight = '455px';
-        imgElement.style.objectFit = 'cover';
+        imgElement.style.objectFit =
+          content.getAttribute('data-fit') || 'cover';
         imgElement.style.marginTop = '10px';
         imgElement.style.marginBottom = '10px';
         imgElement.style.borderRadius = '10px';
@@ -95,7 +96,8 @@ projectsItem.forEach((item) => {
         videoElement.playsInline = true;
         videoElement.style.width = '80%';
         videoElement.style.maxHeight = '455px';
-        videoElement.style.objectFit = 'cover';
+        videoElement.style.objectFit =
+          content.getAttribute('data-fit') || 'cover';
         videoElement.style.marginTop = '10px';
         videoElement.style.marginBottom = '10px';
         videoElement.style.borderRadius = '10px';
